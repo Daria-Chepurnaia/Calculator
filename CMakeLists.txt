@@ -7,13 +7,20 @@ set(CMAKE_CXX_STANDARD 17)
 
 include_directories(${CMAKE_SOURCE_DIR}/nodes)
 include_directories(${CMAKE_SOURCE_DIR}/parser)
+include_directories(${CMAKE_SOURCE_DIR}/utils)
 
 add_executable(calculator
     main.cpp
     nodes/Value.cpp
     nodes/Sum.cpp
+    nodes/Substr.cpp
+    nodes/Divide.cpp
+    nodes/Multipl.cpp
+    nodes/Negate.cpp
+    nodes/Variable.cpp
+    parser/Tokenizer.cpp
     parser/ExpressionParser.cpp
-)
+  )
 
 # ---- GoogleTest and Tests ----
 
