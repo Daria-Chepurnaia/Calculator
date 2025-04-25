@@ -38,9 +38,17 @@ enable_testing()
 
 # Build test executable
 add_executable(calculator_tests
-    tests/TestSum.cpp
+    tests/TestExpressionParser.cpp
     nodes/Value.cpp
     nodes/Sum.cpp
+    nodes/Substr.cpp
+    nodes/Divide.cpp
+    nodes/Multipl.cpp
+    nodes/Negate.cpp
+    nodes/Variable.cpp
+    parser/Tokenizer.cpp           
+    parser/ExpressionParser.cpp   
+    utils/VariableInput.cpp       
 )
 
 target_include_directories(calculator_tests PRIVATE ${CMAKE_SOURCE_DIR}/nodes)

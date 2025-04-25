@@ -5,7 +5,8 @@
 class VariableInput {
 public:
     double getValue(const std::string& name);
-
+    void set(const std::string& name, double value);
+    
     void clear();
 
 private:

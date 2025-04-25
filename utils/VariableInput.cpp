@@ -18,6 +18,10 @@ double VariableInput::getValue(const std::string& name) {
     } catch (...) {
         throw std::runtime_error("Invalid value for variable '" + name + "'");
     }
+} 
+
+void VariableInput::set(const std::string& name, double value) {
+    values[name] = value;
 }
 
 void VariableInput::clear() {
