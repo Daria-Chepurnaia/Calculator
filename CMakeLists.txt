@@ -20,6 +20,7 @@ add_executable(calculator
     nodes/Variable.cpp
     parser/Tokenizer.cpp
     parser/ExpressionParser.cpp
+    utils/VariableInput.cpp
   )
 
 # ---- GoogleTest and Tests ----

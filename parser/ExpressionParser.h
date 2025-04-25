@@ -7,7 +7,7 @@
 
 class ExpressionParser {
 public:
-    static std::unique_ptr<INode> parse(const std::string& input);
+    static std::unique_ptr<INode> parseFromTokens(const std::vector<Token>& tokens);
 };
 
 

@@ -3,13 +3,13 @@
 
 enum class TokenType {
     Number,
-    Variable,
     Plus,
     Minus,
     Multiply,
     Divide,
     LeftParen,
     RightParen,
+    Variable,
     End
 };
 
