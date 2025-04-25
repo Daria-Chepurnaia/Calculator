@@ -16,8 +16,31 @@ std::vector<Token> Tokenizer::tokenize(const std::string& input, VariableInput& 
 
         if (std::isdigit(ch) || ch == '.') {
             size_t start = i;
-            while (i < input.length() && (std::isdigit(input[i]) || input[i] == '.')) ++i;
-            tokens.push_back({TokenType::Number, input.substr(start, i - start)});
+            bool hasDigit = false;
+            bool hasDot = false;
+        
+            while (i < input.length()) {
+                if (std::isdigit(input[i])) {
+                    hasDigit = true;
+                    ++i;
+                } else if (input[i] == '.') {
+                    if (hasDot) {
+                        throw std::runtime_error("Invalid number: multiple decimal points");
+                    }
+                    hasDot = true;
+                    ++i;
+                } else {
+                    break;
+                }
+            }
+        
+            std::string numberStr = input.substr(start, i - start);
+        
+            if (!hasDigit) {
+                throw std::runtime_error("Invalid number: '.' without digits");
+            }
+        
+            tokens.push_back({TokenType::Number, numberStr});
             continue;
         }
 

@@ -87,7 +87,7 @@ std::unique_ptr<INode> ExpressionParser::parseFromTokens(const std::vector<Token
     auto result = parser.parseExpression();
 
     if (parser.current().type != TokenType::End) {
-        throw std::runtime_error("Unexpected tokens after valid expression");
+        throw std::runtime_error("Invalid expression");
     }
 
     return result;
