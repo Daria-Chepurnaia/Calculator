@@ -51,7 +51,6 @@ Requirements:
 
 - CMake >= 3.10
 - C++17-compatible compiler
-- GoogleTest (automatically downloaded or locally included)
 
 **Commands:**
 
