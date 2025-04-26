@@ -38,7 +38,7 @@ enable_testing()
 
 # Build test executable
 add_executable(calculator_tests
-    tests/TestExpressionParser.cpp
+    tests/TestIntegration.cpp 
     tests/TestTokenizer.cpp
     nodes/Value.cpp
     nodes/Sum.cpp
