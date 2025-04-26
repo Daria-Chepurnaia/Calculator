@@ -24,7 +24,7 @@ It supports numbers, variables, parentheses, basic operations (`+`, `-`, `*`, `/
 ```
 calculator/
 ├── main.cpp
-├── nodes/              # Expression tree nodes (Value, Sum, Substr, etc.)
+├── nodes/              # Expression tree nodes (Value, Sum, Subtract, etc.)
 ├── parser/             # Lexical and syntax analysis:
 │   ├── Tokenizer        # Converts expression string into tokens (numbers, operators, variables)
 │   └── ExpressionParser # Builds an abstract syntax tree (AST) from tokens

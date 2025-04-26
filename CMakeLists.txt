@@ -13,7 +13,7 @@ add_executable(calculator
     main.cpp
     nodes/Value.cpp
     nodes/Sum.cpp
-    nodes/Substr.cpp
+    nodes/Subtract.cpp
     nodes/Divide.cpp
     nodes/Multipl.cpp
     nodes/Negate.cpp
@@ -42,7 +42,7 @@ add_executable(calculator_tests
     tests/TestTokenizer.cpp
     nodes/Value.cpp
     nodes/Sum.cpp
-    nodes/Substr.cpp
+    nodes/Subtract.cpp
     nodes/Divide.cpp
     nodes/Multipl.cpp
     nodes/Negate.cpp

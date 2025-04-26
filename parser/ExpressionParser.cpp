@@ -3,7 +3,7 @@
 
 #include "../nodes/Value.h"
 #include "../nodes/Sum.h"
-#include "../nodes/Substr.h"
+#include "../nodes/Subtract.h"
 #include "../nodes/Multipl.h"
 #include "../nodes/Divide.h"
 #include "../nodes/Negate.h"
@@ -18,17 +18,6 @@ class Parser {
 public:
     explicit Parser(const std::vector<Token>& tks) : tokens(tks) {}
 
-    const Token& current() const {
-        if (pos >= tokens.size()) {
-            throw std::runtime_error("Unexpected end of input");
-        }
-        return tokens[pos];
-    }
-
-    void advance() {
-        if (pos < tokens.size()) ++pos;
-    }
-
     std::unique_ptr<INode> parseExpression() {
         auto node = parseTerm();
         while (current().type == TokenType::Plus || current().type == TokenType::Minus) {
@@ -38,10 +27,22 @@ public:
             if (op == TokenType::Plus)
                 node = std::make_unique<Sum>(std::move(node), std::move(right));
             else
-                node = std::make_unique<Substr>(std::move(node), std::move(right));
+                node = std::make_unique<Subtract>(std::move(node), std::move(right));
         }
         return node;
     }
+
+    const Token& current() const {
+        if (pos >= tokens.size()) {
+            throw std::runtime_error("Unexpected end of input");
+        }
+        return tokens[pos];
+    }
+
+private:   
+    void advance() {
+        if (pos < tokens.size()) ++pos;
+    }    
 
     std::unique_ptr<INode> parseTerm() {
         auto node = parseFactor();
