@@ -1,5 +1,6 @@
 
 #  Calculator CLI
+![CMake Build](https://github.com/Daria-Chepurnaia/Calculator/actions/workflows/cmake.yml/badge.svg)
 
 ### 📚 Description
 
